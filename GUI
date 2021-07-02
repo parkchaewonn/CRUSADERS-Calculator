@@ -1,1 +1,96 @@
-Codes in GUI of this Calculator Project will be placed here.
+# Codes in GUI of this Calculator Project will be placed here
+
+from tkinter import *
+
+class Calculator(Frame):
+# Main class  for the calculator
+
+    def __init__(self, master):
+    # Frame of the calculator
+        super(Calculator, self).__init__(master)
+        self.function = ""
+        self.user_input = StringVar()
+        self.grid()
+        self.calculator_widgets()
+
+    def calculator_widgets(self):
+    # Creating the buttons of the calculator and design
+    # GUI
+
+        self.input = Entry(self, bg = "gray", bd = 29, 
+        insertwidth = 4, width = 30,
+        font = ("Arial", 20, "bold"), textvariable = self.user_input, justify = RIGHT)
+        self.input.grid(columnspan = 4)
+
+        self.input.insert(0, "0")
+        
+        # Button for number 0
+        self.num0 = Button(self, bg = "gray", bd = 12, 
+        text = "0",  padx = 35, pady = 25,
+        command = lambda : self.click_button(0), font = ("Arial", 20, "bold"))
+        self.num0.grid(row = 5, column = 0, sticky = W)
+        
+        # Button for number 1
+        self.num1 = Button(self, bg = "gray", bd = 12,
+        text = "1", padx = 35, pady = 25, font = ("Arial", 20, "bold"), 
+        command = lambda : self.click_button(1))
+        self.num1.grid(row = 2, column = 0, sticky = W)
+
+        # Button for number 2
+        self.num2 = Button(self, bg = "gray", bd = 12, 
+        text = "2",  padx = 35, pady = 25, 
+        command = lambda : self.click_button(2), font = ("Arial", 20, "bold"))
+        self.num2.grid(row = 2, column = 1, sticky = W)
+        
+        # Button for number 3
+        self.num3 = Button(self, bg = "gray", bd = 12, 
+        text = "3",  padx = 35, pady = 25,
+        command = lambda : self.click_button(3), font = ("Arial", 20, "bold"))
+        self.num3.grid(row = 2, column = 2, sticky = W)
+
+        # Button for number 4
+        self.num4 = Button(self, bg = "gray", bd = 12,
+        text = "4",  padx = 35, pady = 25,
+        command = lambda : self.click_button(4), font = ("Arial", 20, "bold"))
+        self.num4.grid(row = 3, column = 0, sticky = W)
+
+        # Button for number 5
+        self.num5 = Button(self, bg = "gray", bd = 12, 
+        text = "5",  padx = 35, pady = 25,
+        command = lambda : self.click_button(5), font = ("Arial", 20, "bold"))
+        self.num5.grid(row = 3, column = 1, sticky = W)
+
+        # Button for number 6
+        self.num6 = Button(self, bg = "gray", bd = 12, 
+        text = "6",  padx = 35, pady = 25,
+        command = lambda : self.click_button(6), font = ("Arial", 20, "bold"))
+        self.num6.grid(row = 3, column = 2, sticky = W)
+
+        # Button for number 7
+        self.num7 = Button(self, bg = "gray", bd = 12, 
+        text = "7",  padx = 35, pady = 25, 
+        command = lambda : self.click_button(7), font = ("Arial", 20, "bold"))
+        self.num7.grid(row = 4, column = 0, sticky = W)
+
+        # Button for number 8
+        self.num8 = Button(self, bg = "gray", bd = 12, 
+        text = "8",  padx = 35, pady = 25,
+        command = lambda : self.click_button(8), font = ("Arial", 20, "bold"))
+        self.num8.grid(row = 4, column = 1, sticky = W)
+
+        # Button for number 9
+        self.num9 = Button(self, bg = "gray", bd = 12, 
+        text = "9",  padx = 35, pady = 25,
+        command = lambda : self.click_button(9), font = ("Arial", 20, "bold"))
+        self.num9.grid(row = 4, column = 2, sticky = W)
+
+    def click_button(self, number):
+        self.function = str(self.function) + str(number)
+        self.user_input.set(self.function)
+
+calculator = Tk()
+
+calculator.title("Calculator")
+app = Calculator(calculator)
+
+calculator.mainloop()
