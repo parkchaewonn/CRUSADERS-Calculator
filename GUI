@@ -1,5 +1,3 @@
-# Codes in GUI of this Calculator Project will be placed here
-
 from tkinter import *
 
 class Calculator(Frame):
@@ -83,6 +81,43 @@ class Calculator(Frame):
         text = "9",  padx = 35, pady = 25,
         command = lambda : self.click_button(9), font = ("Arial", 20, "bold"))
         self.num9.grid(row = 4, column = 2, sticky = W)
+
+    # Buttons for basic operations
+        # Addition
+        self.Addbutton = Button(self, bg = "gray", bd = 12, 
+        text = "+",  padx = 32, pady = 25,
+        command = lambda : self.click_button("+"), font = ("Arial", 20, "bold"))
+        self.Addbutton.grid(row = 2, column = 3, sticky = W)
+
+        # Subtraction
+        self.Subbutton = Button(self, bg = "gray", bd = 12, 
+        text = "-",  padx = 36, pady = 25,
+        command = lambda : self.click_button("-"), font = ("Arial", 20, "bold"))
+        self.Subbutton.grid(row = 3, column = 3, sticky = W)
+
+        # Multiplication
+        self.Multbutton = Button(self, bg = "gray", bd = 12, 
+        text = "*",  padx = 35, pady = 25,
+        command = lambda : self.click_button("*"), font = ("Arial", 20, "bold"))
+        self.Multbutton.grid(row = 4, column = 3, sticky = W)
+
+        # Division
+        self.Divbutton = Button(self, bg = "gray", bd = 12, 
+        text = "/",  padx = 36, pady = 25,
+        command = lambda : self.click_button("/"), font = ("Arial", 20, "bold"))
+        self.Divbutton.grid(row = 5, column = 3, sticky = W)
+
+        # Decimal button
+        self.Decimalbutton = Button(self, bg = "gray", bd = 12, 
+        text = ".",  padx = 38, pady = 25,
+        command = lambda : self.click_button("."), font = ("Arial", 20, "bold"))
+        self.Decimalbutton.grid(row = 5, column = 1, sticky = W)
+
+        # Equal button
+        self.Equalbutton = Button(self, bg = "gray", bd = 12, 
+        text = "=",  padx = 35, pady = 25, font = ("Arial", 20, "bold"))
+        self.Equalbutton.grid(row = 5, column = 2, sticky = W, columnspan = 2)
+
 
     def click_button(self, number):
         self.function = str(self.function) + str(number)
