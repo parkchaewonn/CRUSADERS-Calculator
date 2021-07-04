@@ -82,7 +82,7 @@ class Calculator(Frame):
         command = lambda : self.click_button(9), font = ("Arial", 20, "bold"))
         self.num9.grid(row = 4, column = 2, sticky = W)
 
-    # Buttons for basic operations
+        # Buttons for basic operations
         # Addition
         self.Addbutton = Button(self, bg = "gray", bd = 12, 
         text = "+",  padx = 32, pady = 25,
@@ -115,8 +115,18 @@ class Calculator(Frame):
 
         # Equal button
         self.Equalbutton = Button(self, bg = "gray", bd = 12, 
-        text = "=",  padx = 35, pady = 25, font = ("Arial", 20, "bold"))
+        text = "=",  font = ("Arial", 20, "bold"), padx = 35, pady = 25, command = self.Calculate)
         self.Equalbutton.grid(row = 5, column = 2, sticky = W, columnspan = 2)
+
+        # Clear Button
+        self.Clearbutton = Button(self, bg = "gray", bd = 12,
+        text = "AC", font = ("Arial", 20, "bold"), width = 5, padx = 6, command = self.Clear)
+        self.Clearbutton.grid(row = 1, column = 3, sticky = W, columnspan = 2)
+
+        # Delete Button
+        self.Delbutton = Button(self, bg = "gray", bd = 12,
+        text = "DEL", font = ("Arial", 20, "bold"), width = 5, padx = 8, command = self.DeleteNum)
+        self.Delbutton.grid(row = 1, column = 2, sticky = W, columnspan = 2)
 
 
     def click_button(self, number):
@@ -127,5 +137,6 @@ calculator = Tk()
 
 calculator.title("Calculator")
 app = Calculator(calculator)
+calculator.resizable(width = False, height = False)
 
 calculator.mainloop()
