@@ -120,7 +120,7 @@ class Genius_Pad(Frame):
 
         # Exponent Button
         self.Expbutton = Button(self, bg = "white smoke", bd = 12, 
-        text = "x^2", command = self.ExpNum, 
+        text = "x²", command = self.ExpNum, 
         font = ("Arial", 20, "bold"), fg = "deep sky blue", width = 5, padx = 8)
         self.Expbutton.grid(row = 1, column = 1, sticky = W, columnspan = 2)
 
