@@ -1,3 +1,5 @@
+import math
+
 # Calculator Logic
 def Calculate(self):
     self.data = self.input.get()
@@ -24,4 +26,16 @@ def Clear(self):
     self.input.insert(0, "0")
 
 def DeleteNum(self):
-    pass
+    self.function = self.input.get()[:-1]
+    self.input.delete(0, END)
+    self.input.insert(0, self.function)
+
+def ExpNum(self):
+    self.function = math.pow(float(self.input.get()), 2)
+    self.input.delete(0, END)
+    self.input.insert(0, self.function)
+        
+def SqrtNum(self):
+    self.function = math.sqrt(float(self.input.get()))
+    self.input.delete(0, END)
+    self.input.insert(0, self.function)
