@@ -115,41 +115,31 @@ class Genius_Pad(Frame):
 
         # Equal button
         self.Equalbutton = Button(self, bg = "white smoke", bd = 12, 
-        text = "=", font = ("Arial", 20, "bold"), padx = 35, pady = 25, command = self.Calculate)
+        text = "=", font = ("Arial", 20, "bold"), padx = 35, pady = 25)
         self.Equalbutton.grid(row = 5, column = 2, sticky = W, columnspan = 2)
 
         # Exponent Button
         self.Expbutton = Button(self, bg = "white smoke", bd = 12, 
-        text = "x²", command = self.ExpNum, 
+        text = "x²",
         font = ("Arial", 20, "bold"), fg = "deep sky blue", width = 5, padx = 8)
         self.Expbutton.grid(row = 1, column = 1, sticky = W, columnspan = 2)
 
         # Squareroot button
         self.Sqrtbutton = Button(self, bg = "white smoke", bd = 12, 
-        text = "√", command = self.SqrtNum, 
+        text = "√",
         font = ("Verdana", 20, "bold"), fg = "deep sky blue", width = 5, padx = 4)
         self.Sqrtbutton.grid(row = 1, column = 0, sticky = W, columnspan = 2)
 
         # Delete Button
         self.Delbutton = Button(self, bg = "white smoke", bd = 12,
-        text = "Del", font = ("Arial", 20, "bold"), fg = "deep sky blue", width = 5, padx = 8, command = self.DeleteNum)
+        text = "Del", font = ("Arial", 20, "bold"), fg = "deep sky blue", width = 5, padx = 8)
         self.Delbutton.grid(row = 1, column = 2, sticky = W, columnspan = 2)
 
         # Clear Button
         self.Clearbutton = Button(self, bg = "white smoke", bd = 12,
-        text = "AC", font = ("Arial", 20, "bold"), fg = "deep sky blue", width = 5, padx = 6, command = self.Clear)
+        text = "AC", font = ("Arial", 20, "bold"), fg = "deep sky blue", width = 5, padx = 6)
         self.Clearbutton.grid(row = 1, column = 3, sticky = W, columnspan = 2)
-
 
     def click_button(self, number):
         self.function = str(self.function) + str(number)
         self.user_input.set(self.function)
-
-calculator = Tk()
-
-calculator.title("The Genius Pad")
-app = Genius_Pad(calculator)
-# Make the window fixed and cannot be resized
-calculator.resizable(width = False, height = False)
-
-calculator.mainloop()
