@@ -22,6 +22,14 @@ class Test(unittest.TestCase):
         g = Logic()
         g.input = "2 -5 "
         self.assertEqual(g.Calculate(), -3)
+    def test_53(self):
+        g = Logic()
+        g.input = "1+1+1"
+        self.assertEqual(g.Calculate(), 3)
+    def test_551(self):
+        g = Logic()
+        g.input = "5"
+        self.assertEqual(g.Calculate(), 5)
 
 if __name__ == "__main__":
     unittest.main()
