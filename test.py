@@ -30,6 +30,9 @@ class Test(unittest.TestCase):
         g = Logic()
         g.input = "5"
         self.assertEqual(g.Calculate(), 5)
-
+   def test_55315(self):
+        g = Logic()
+        g.input = "5*5"
+        self.assertEqual(g.Calculate(), 25)
 if __name__ == "__main__":
     unittest.main()
