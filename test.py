@@ -25,7 +25,7 @@ class Test(unittest.TestCase):
     def test_53(self):
         g = Logic()
         g.input = "1+1+1"
-        self.assertEqual(g.Calculate(), 3)
+        self.assertEqual(g.Cahttps://github.com/parkchaewonn/CRUSADERS-Calculator/blob/unit-test/test.pylculate(), 3)
     def test_551(self):
         g = Logic()
         g.input = "5"
@@ -34,5 +34,13 @@ class Test(unittest.TestCase):
         g = Logic()
         g.input = "5*5"
         self.assertEqual(g.Calculate(), 25)
+   def test_553(self):
+        g = Logic()
+        g.input = "6-3"
+        self.assertEqual(g.Calculate(), 3)
+   def test_5213(self):
+        g = Logic()
+        g.input = "5-5-5"
+        self.assertEqual(g.Calculate(), -5)
 if __name__ == "__main__":
     unittest.main()
