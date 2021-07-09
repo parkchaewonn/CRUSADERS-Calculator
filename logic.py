@@ -1,5 +1,3 @@
-import math
-
 # Calculator Logic
 def Calculate(self):
     self.data = self.input.get()
