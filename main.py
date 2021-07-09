@@ -1,5 +1,5 @@
-from logic import *
 from tkinter import *
+from logic import *
 import math
 
 class Genius_Pad(Frame):
@@ -161,3 +161,14 @@ class Genius_Pad(Frame):
             self.displayResult("Math Error")
             self.function = ""
             
+    genius_pad_logic = Calculate
+    
+calculator = Tk()
+
+calculator.title("The Genius Pad")
+app = Genius_Pad(calculator)
+
+# Make the window fixed and cannot be resized
+calculator.resizable(width = False, height = False)
+
+calculator.mainloop()
